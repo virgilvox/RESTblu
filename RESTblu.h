@@ -14,9 +14,7 @@ class RESTblu
 	private:
 		String _UUID;
 		String _TOKEN;
-	//	String _target;
-	//	String _payload;
-	//	WifiClient _client;
+	
 
 
 };

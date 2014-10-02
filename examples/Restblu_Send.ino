@@ -40,7 +40,10 @@ int status = WL_IDLE_STATUS;
 // Initialize the Wifi client library
 WiFiClient client;
 
-RESTblu mesh("36731e80-4799-11e4-b14a-dd19039b8fdc", "ifnpox80e8r7wrk944osy7o3v6zgp66r");
+String UUID = "36731e80-4799-11e4-b14a-dd19039b8fdc";
+String TOKEN = "ifnpox80e8r7wrk944osy7o3v6zgp66r" ;
+
+RESTblu mesh( UUID , TOKEN );
 
 // server address:
 char server[] = "meshblu.octoblu.com";

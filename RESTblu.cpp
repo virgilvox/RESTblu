@@ -14,9 +14,7 @@ RESTblu::RESTblu(String UUID, String TOKEN)
 
 
 void RESTblu::send(String payload, String target, WiFiClient client) {
- 
-// _payload = payload;
-// _target = target;
+
 
  String PostData = "{\"devices\": \"" + target + "\", \"payload\" :" + payload + "}";
   // if there's a successful connection:
