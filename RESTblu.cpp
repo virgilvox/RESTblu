@@ -24,11 +24,12 @@ void RESTblu::send(String payload, String target, WiFiClient client) {
   client.println("POST /messages HTTP/1.1");
   client.println("Host: meshblu.octoblu.com");
  // client.print(server);
+  Serial.println("host");
   client.println("User-Agent: microblu");
-  client.println("skynet_auth_uuid: ");
-  client.print(_UUID);
-  client.println("skynet_auth_token: ");
-  client.print(_TOKEN);
+  client.print("skynet_auth_uuid: ");
+  client.println(_UUID);
+  client.print("skynet_auth_token: ");
+  client.println(_TOKEN);
   client.println("Content-Type: application/json");
   client.println("Connection: close");
   client.print("Content-Length: ");
