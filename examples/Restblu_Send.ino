@@ -29,8 +29,8 @@ Sends a Meshblu message to a specific UUID at repeated intervals.
 #include <WiFi.h>
 #include <RESTblu.h>
 
-char ssid[] = "@HomeD8A7" ;      //  your network SSID (name) 
-char pass[] = "kickback21" ;   // your network password
+char ssid[] = "SSID" ;      //  your network SSID (name) 
+char pass[] = "PASSWORD" ;   // your network password
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
 int status = WL_IDLE_STATUS;
@@ -40,8 +40,8 @@ int status = WL_IDLE_STATUS;
 // Initialize the Wifi client library
 WiFiClient client;
 
-String UUID = "36731e80-4799-11e4-b14a-dd19039b8fdc";
-String TOKEN = "ifnpox80e8r7wrk944osy7o3v6zgp66r" ;
+String UUID = "your-uuid-here";
+String TOKEN = "your_token" ;
 
 RESTblu mesh( UUID , TOKEN );
 
@@ -107,10 +107,9 @@ void loop() {
   if(!client.connected() && (millis() - lastConnectionTime > postingInterval)) {
     
     
-  //  meshblu_send("*", 15);
-   // meshblu_recieve();
- lastConnectionTime = millis();
-  mesh.send("15", "*", client);
+   mesh.send("15", "*", client);
+  lastConnectionTime = millis();
+  
   }
   // store the state of the connection for next time through
   // the loop:
@@ -137,7 +136,6 @@ void printWifiStatus() {
   Serial.print(rssi);
   Serial.println(" dBm");
 }
-
 
 
 
